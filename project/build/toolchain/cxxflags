@@ -1,0 +1,7 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/project/build/specs/picolibc.specs"
+-fno-rtti
