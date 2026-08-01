@@ -1,7 +1,0 @@
-"-specs=C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/project/build/bootloader/specs/picolibc.specs"
--Wno-frame-address
--mlongcalls
--fno-builtin-memcpy
--fno-builtin-memset
--fno-builtin-bzero
--fno-rtti
