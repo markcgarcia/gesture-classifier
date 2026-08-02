@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "receiver",
-    "project_version":    "9a66efc-dirty",
+    "project_version":    "7196c94-dirty",
     "project_path":       "C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver",
     "idf_path":           "C:/esp/v6.0.2/esp-idf",
     "build_dir":          "C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build",

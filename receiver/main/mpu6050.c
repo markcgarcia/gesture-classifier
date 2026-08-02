@@ -64,7 +64,7 @@ void i2c_master_init(i2c_master_bus_handle_t *bus_handle, i2c_master_dev_handle_
 // }
 
 void print_packet(FloatSample *sample) {
-    printf("%.7f, %.7f, %.7f, %.7f, %.7f, %.7f\n", 
+    printf("%.7f,%.7f,%.7f,%.7f,%.7f,%.7f\n", 
             sample->ax, sample->ay, sample->az, sample->gx, sample->gy, sample->gz);
 }
 
