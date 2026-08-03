@@ -161,7 +161,8 @@
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/rt/cmake_install.cmake",
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/spiffs/cmake_install.cmake",
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/ulp/cmake_install.cmake",
-		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/cmake_install.cmake"
+		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/cmake_install.cmake",
+		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

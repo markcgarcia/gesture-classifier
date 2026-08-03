@@ -1130,3 +1130,10 @@ C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/CMakeFiles/install.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/CMakeFiles/install/local.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/CMakeFiles/install/strip.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/__idf_edge-impulse.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/edit_cache.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/rebuild_cache.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/list_install_components.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/install.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/install/local.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/install/strip.dir

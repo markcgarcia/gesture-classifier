@@ -205,3 +205,4 @@ $<TARGET_FILE:idf::spiffs>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_driver>
 $<TARGET_FILE:__idf_esp_eth>
+$<TARGET_FILE:idf::edge-impulse>

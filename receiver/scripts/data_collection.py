@@ -2,6 +2,7 @@ import serial
 import serial.tools.list_ports
 import time
 import csv
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,17 +16,27 @@ for port in ports:
 # Connect to respective port or throw error message
 ser = serial.Serial('COM6', 115200)
 
-# Wait for initialization
-time.sleep(1)
-
 # Initialize the CSV file
 header = "timestamp,acclX,acclY,acclZ,gyroX,gyroY,gyroZ"
-filepath = r"C:\Users\garci\Documents\Projects\26Su_Project\gesture-classifier\receiver\scripts"
+filepath = r"C:\Users\garci\Documents\Projects\26Su_Project\gesture-classifier\receiver\scripts\captures"
 i = 0
 
+# Make sure that this new capture is unique
+gesture = "chop"
+count = 1
+filename = f"{gesture}.{count}.csv"
+
+new_file = os.path.join(filepath, f"{gesture}.{count}.csv")
+
+while os.path.exists(new_file):
+    count += 1
+    new_file = os.path.join(filepath, f"{gesture}.{count}.csv")
+
+new_file = os.path.join(filepath, f"{gesture}.{count}.csv")
+
 # Countdown to data collection
-print("3")
-time.sleep(1)
+# print("3")
+# time.sleep(1)
 print("2")
 time.sleep(1)
 print("1")
@@ -33,12 +44,12 @@ time.sleep(1)
 print("Reading start!")
 
 # Do 2s (200 sample) data collection
-with open(filepath, "out.csv", "w", newline="", encoding="utf-8") as file:
+with open(new_file, "w", newline="", encoding="utf-8") as file:
     # main loop
     try:
         file.write(header)
         file.write("\n")
-        while i < 200:
+        while i < 1000:
                 if ser.in_waiting > 0:
                     val = None
                     # Only read the latest line
@@ -66,7 +77,7 @@ with open(filepath, "out.csv", "w", newline="", encoding="utf-8") as file:
 
 # TODO: Plot onto six different Matplotlib windows
 # Use Pandas to read in CSV that we took
-df = pd.read_csv("out.csv")
+df = pd.read_csv(new_file)
 
 fig, ax = plt.subplots(3, 2)
 

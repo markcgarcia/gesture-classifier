@@ -1,0 +1,41 @@
+Command: ninja all
+CMake Error at C:/esp/v6.0.2/esp-idf/tools/cmake/component.cmake:231 (message):
+  CMake Warning (dev) at build_properties.temp.cmake:8:
+
+    Syntax Warning in cmake code at column 106
+
+
+
+    Argument not separated from preceding token by whitespace.
+
+  Call Stack (most recent call first):
+
+    C:/esp/v6.0.2/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:3 (include)
+
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+
+
+  CMake Error at
+  C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/CMakeLists.txt:4
+  (message):
+
+    Please create a target named 'app' (ex: add_executable(app)) before adding
+    this file
+
+  Call Stack (most recent call first):
+
+    C:/esp/v6.0.2/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:107 (include)
+    C:/esp/v6.0.2/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:160 (__component_get_requirements)
+
+
+
+
+
+Call Stack (most recent call first):
+  C:/esp/v6.0.2/esp-idf/tools/cmake/build.cmake:732 (__component_get_requirements)
+  C:/esp/v6.0.2/esp-idf/tools/cmake/project.cmake:773 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed
