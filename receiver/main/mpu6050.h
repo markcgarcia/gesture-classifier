@@ -1,8 +1,13 @@
 #pragma once
-
 #include "esp_log.h"
 #include "driver/gpio.h"
 #include "driver/i2c_master.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define ACCEL_XOUT_REG_ADDR     0x3B
 #define ACCEL_YOUT_REG_ADDR     0x3D
@@ -48,3 +53,8 @@ esp_err_t imu_write_reg(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr, ui
 void i2c_master_init(i2c_master_bus_handle_t *bus_handle, i2c_master_dev_handle_t *dev_handle);
 void print_packet(FloatSample *sample);
 FloatSample convert_sample(DataSample *sample);
+void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf);
+
+#ifdef __cplusplus
+}
+#endif

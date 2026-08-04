@@ -202,6 +202,9 @@ C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/perfmon/libperfmon.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/rt/librt.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/spiffs/libspiffs.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__esp-dsp/libespressif__esp-dsp.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/libedge-impulse.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__esp-dsp/libespressif__esp-dsp.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/libmain.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/driver/libdriver.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/esp_eth/libesp_eth.a

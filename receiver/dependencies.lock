@@ -1,35 +1,21 @@
 dependencies:
-  espressif/cmake_utilities:
-    component_hash: 05165f30922b422b4b90c08845e6d449329b97370fbd06309803d8cb539d79e3
+  espressif/esp-dsp:
+    component_hash: ed9ac175b14e0414399a2b33c525579414b5bad19a2a67b12ea212def96f9a98
     dependencies:
     - name: idf
       require: private
-      version: '>=4.1'
-    source:
-      registry_url: https://components.espressif.com
-      type: service
-    version: 1.1.1
-  espressif/esp-now:
-    component_hash: 217f4e2c1672bcc71e5890fb3659528bbce5f1a8a995b1668fec9374acbd0f45
-    dependencies:
-    - name: espressif/cmake_utilities
-      registry_url: https://components.espressif.com
-      require: private
-      version: '>=0.5.3'
-    - name: idf
-      require: private
-      version: '>=4.4'
+      version: '>=4.2'
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 2.5.3
+    version: 1.8.2
   idf:
     source:
       type: idf
     version: 6.0.2
 direct_dependencies:
-- espressif/esp-now
+- espressif/esp-dsp
 - idf
-manifest_hash: db5ff1b273aff28e221546dd99723763f546e0aa3b2fadc40d7835e26978d883
+manifest_hash: 40674df0ad5c0b4b641e7edfc9ece8d54299c1a3bf5acbb99ae1edf1f3de2da6
 target: esp32s3
 version: 3.0.0

@@ -1,0 +1,42 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\garci\Documents\Projects\26Su_Project\gesture-classifier\receiver\build\bootloader && C:\Espressif\tools\python\v6.0.2\venv\Scripts\python.exe C:/esp/v6.0.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/receiver.cpp.obj
+In file included from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/tensorflow/lite/micro/micro_mutable_op_resolver.h:22,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/tensorflow/lite/micro/all_ops_resolver.h:19,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/classifier/inferencing_engines/tflite_helper.h:52,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/classifier/inferencing_engines/tflite_eon.h:44,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/classifier/ei_run_classifier.h:63,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/main/receiver.cpp:11:
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/bits/move.h:37,
+                 from C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/bits/stl_function.h:60,
+                 from C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/functional:51,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/dsp/numpy_types.h:39,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/classifier/ei_classifier_types.h:41,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/classifier/ei_model_types.h:40,
+                 from C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/components/edge-impulse/edge-impulse-sdk/classifier/ei_run_classifier.h:38:
+C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/type_traits:931:5: note: declared here
+  931 |     is_pod
+      |     ^~~~~~
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/main/receiver.cpp: In function 'void app_main()':
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/main/receiver.cpp:33:16: warning: variable 'sample' set but not used [-Wunused-but-set-variable]
+   33 |     DataSample sample;
+      |                ^~~~~~
+[5/9] Linking C static library esp-idf\main\libmain.a
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable receiver.elf
+[8/9] Generating binary image from built executable
+esptool v5.3.1
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/receiver.bin
+[9/9] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\garci\Documents\Projects\26Su_Project\gesture-classifier\receiver\build && C:\Espressif\tools\python\v6.0.2\venv\Scripts\python.exe C:/esp/v6.0.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/partition_table/partition-table.bin C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/receiver.bin"
+receiver.bin binary size 0xba120 bytes. Smallest app partition is 0x100000 bytes. 0x45ee0 bytes (27%) free.
