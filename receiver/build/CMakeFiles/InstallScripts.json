@@ -163,6 +163,7 @@
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/ulp/cmake_install.cmake",
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__esp-dsp/cmake_install.cmake",
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/cmake_install.cmake",
+		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/cmake_install.cmake",
 		"C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/cmake_install.cmake"
 	],
 	"Parallel" : false
