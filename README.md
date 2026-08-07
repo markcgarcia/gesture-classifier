@@ -33,4 +33,7 @@ Working version of one-node gesture classifier. Classifier outputs are printed o
 One-node gesture classifier with extra improvements. Classifier is now triggered by a switch instead of having to restart the serial monitor. Additionally, the onboard LED now has the capability to display color codes according to classifier output.
 
 ### v1.0.0
-Two-node gesture classifier, which is wirelessly connected by ESP-NOW protocol.
+Two-node gesture classifier, which is wirelessly connected by ESP-NOW protocol. Has different gestures compared to the original classifier, allowing for 12 axes of sensor data instead of the original 6.
+
+### v1.1.0
+Added BLE GATT phone connectivity to display sensor outputs.
