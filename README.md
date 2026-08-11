@@ -29,11 +29,11 @@ An ESP32-S3 powered hand gesture classifier, which takes samples from an MPU6050
 ### v0.1.0
 Working version of one-node gesture classifier. Classifier outputs are printed out on the terminal after a one second sample is taken. Must restart the serial monitor in order to run the classifier again.
 
-### v0.1.1
+### v0.1.1 (Finished, unmerged)
 One-node gesture classifier with extra improvements. Classifier is now triggered by a switch instead of having to restart the serial monitor. Additionally, the onboard LED now has the capability to display color codes according to classifier output.
 
-### v1.0.0
+### v1.0.0 (Planned)
 Two-node gesture classifier, which is wirelessly connected by ESP-NOW protocol. Has different gestures compared to the original classifier, allowing for 12 axes of sensor data instead of the original 6.
 
-### v1.1.0
+### v1.1.0 (Planned)
 Added BLE GATT phone connectivity to display sensor outputs.
