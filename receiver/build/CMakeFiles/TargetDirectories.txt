@@ -1137,6 +1137,13 @@ C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/install.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/install/local.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/edge-impulse/CMakeFiles/install/strip.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/__idf_espressif__led_strip.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/edit_cache.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/rebuild_cache.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/list_install_components.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/install.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/install/local.dir
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/espressif__led_strip/CMakeFiles/install/strip.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/CMakeFiles/__idf_main.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/CMakeFiles/edit_cache.dir
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/receiver/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

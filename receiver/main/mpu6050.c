@@ -83,6 +83,7 @@ FloatSample convert_sample(DataSample *sample) {
 // should point to the input buffer that we want to fill.
 void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf) {
     DataSample sample;
+    printf("Now collecting!\n");
     for (int i = 0; i < 200; i++) {
         
         if (imu_read_burst(dev_handle, ACCEL_XOUT_REG_ADDR, 14, &sample) != ESP_OK) {
