@@ -76,6 +76,7 @@ extern "C" void app_main(void) {
                     choice = i;
                 }
             }
+            
             // Update LED with most-likely gesture
             led_choice(rgb, choice);
         }
