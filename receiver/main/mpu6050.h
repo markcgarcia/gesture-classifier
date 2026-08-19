@@ -22,12 +22,10 @@ extern "C" {
 
 // Struct that contains all of our necessary data (gyro xyz, accelo xyz, temp, time)
 typedef struct {
-    uint8_t mac[6];    // mac address
     int16_t num;       // packet number
     int16_t ax;
     int16_t ay;
     int16_t az;
-    int16_t tp;
     int16_t gx;
     int16_t gy;
     int16_t gz;
@@ -35,12 +33,10 @@ typedef struct {
 
 // Struct that contains the converted version of the measurements
 typedef struct {
-    uint8_t mac[6];
     int16_t num;
     float ax;
     float ay;
     float az;
-    float tp;
     float gx;
     float gy;
     float gz;

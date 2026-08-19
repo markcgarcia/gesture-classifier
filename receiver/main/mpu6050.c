@@ -14,7 +14,6 @@ esp_err_t imu_read_burst(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr, s
     sample->ax = (arr[0] << 8) + arr[1];
     sample->ay = (arr[2] << 8) + arr[3];
     sample->az = (arr[4] << 8) + arr[5];
-    sample->tp = (arr[6] << 8) + arr[7];
     sample->gx = (arr[8] << 8) + arr[9];
     sample->gy = (arr[10] << 8) + arr[11];
     sample->gz = (arr[12] << 8) + arr[13];
@@ -71,11 +70,9 @@ FloatSample convert_sample(DataSample *sample) {
     f.ax = (float)sample->ax/ACCEL_SENSITIVITY * 9.8066;
     f.ay = (float)sample->ay/ACCEL_SENSITIVITY * 9.8066;
     f.az = (float)sample->az/ACCEL_SENSITIVITY * 9.8066;
-    f.tp = (float)sample->tp/TEMP_SENSITIVITY + 36.53;
     f.gx = (float)sample->gx/GYRO_SENSITIVITY;
     f.gy = (float)sample->gy/GYRO_SENSITIVITY;
     f.gz = (float)sample->gz/GYRO_SENSITIVITY;
-
     return f;
 }
 

@@ -1,5 +1,10 @@
 #pragma once
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <esp_wifi.h>
 #include <esp_mac.h>
 #include "esp_now.h"
@@ -17,3 +22,7 @@ void recv_cb(const esp_now_recv_info_t *recv_info, const uint8_t *data, const in
 void wifi_espnow_startup();
 void echo_mac_wifi();
 void espnow_add_peer();
+
+#ifdef __cplusplus
+}
+#endif

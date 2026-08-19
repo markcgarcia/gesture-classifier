@@ -202,9 +202,13 @@ C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/bu
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/perfmon/libperfmon.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/rt/librt.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/spiffs/libspiffs.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/espressif__esp-dsp/libespressif__esp-dsp.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/edge-impulse/libedge-impulse.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/espressif__esp-dsp/libespressif__esp-dsp.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/main/libmain.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/driver/libdriver.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/esp_eth/libesp_eth.a
+C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/edge-impulse/libedge-impulse.a
 C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/esp-idf/espressif__led_strip/libespressif__led_strip.a

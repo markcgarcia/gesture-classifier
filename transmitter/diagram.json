@@ -13,14 +13,18 @@
           "psramSize": "8"
         }
     },
-   { "type": "wokwi-slide-switch", "id": "sw1", "top": -24.4, "left": -64.1, "attrs": {} }
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -72.98, "left": 79.12, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -24.4, "left": -64.1, "attrs": {} }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
     [ "esp:RX", "$serialMonitor:TX", "", [] ],
-    [ "sw1:2", "esp:6", "green", [ "v0" ] ],
-    [ "sw1:1", "esp:GND.1", "green", [ "v0" ] ]
+    [ "esp:3V3.1", "imu1:VCC", "green", [ "v0" ] ],
+    [ "esp:GND.1", "imu1:GND", "green", [ "h0" ] ],
+    [ "esp:4", "imu1:SDA", "green", [ "h0" ] ],
+    [ "esp:5", "imu1:SCL", "green", [ "h0" ] ],
+    [ "sw1:2", "esp:6", "red", [ "v0" ] ],
+    [ "sw1:1", "esp:GND.1", "red", [ "v0" ] ]
   ],
   "dependencies": {}
-  
 }

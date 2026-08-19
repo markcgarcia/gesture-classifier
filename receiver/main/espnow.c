@@ -7,6 +7,10 @@
 #include "espnow.h"
 #include "mpu6050.h"
 
+#include "peripherals.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 // Callback function for sending (Tx only)
 void send_cb(const wifi_tx_info_t *tx_info,          // new: transmission info
              const esp_now_send_status_t status)     // Status (success/fail)
@@ -36,12 +40,11 @@ void recv_cb(const esp_now_recv_info_t *recv_info,       // Receive struct (has 
         return;
     }
     
-    // Copy incoming data into struct
-    DataSample temp;
+    DataSample sample;
 
-    // Stamp struct with the sender's MAC address
-    memcpy(&temp, data, 22);
-    memcpy(&temp.mac, recv_info->src_addr, 6);
+    // Push incoming data into the queue
+    memcpy(&sample, data, sizeof(sample));
+    xQueueSendFromISR(incoming_queue, &sample, NULL);
 }
 
 // Setup for WiFi and ESPNOW 
@@ -78,7 +81,7 @@ void espnow_add_peer() {
     esp_now_peer_info_t *peer = malloc(sizeof(esp_now_peer_info_t));
     // Clear out memory at this part of the heap
     memset(peer, 0, sizeof(esp_now_peer_info_t));
-    char source[] = MAC_A;
+    char source[] = MAC_B;
     memcpy((char*)peer->peer_addr, source, sizeof(source));
     peer->channel = 0;
     ESP_ERROR_CHECK(esp_now_add_peer(peer));

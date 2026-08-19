@@ -1,8 +1,13 @@
 #pragma once
-
 #include "esp_log.h"
 #include "driver/gpio.h"
 #include "driver/i2c_master.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define ACCEL_XOUT_REG_ADDR     0x3B
 #define ACCEL_YOUT_REG_ADDR     0x3D
@@ -17,19 +22,35 @@
 
 // Struct that contains all of our necessary data (gyro xyz, accelo xyz, temp, time)
 typedef struct {
-    int16_t num;    // packet number
-    char mac[6];    // mac address
+    int16_t num;       // packet number
     int16_t ax;
     int16_t ay;
     int16_t az;
-    int16_t tp;
     int16_t gx;
     int16_t gy;
     int16_t gz;
 } DataSample;
 
+// Struct that contains the converted version of the measurements
+typedef struct {
+    int16_t num;
+    float ax;
+    float ay;
+    float az;
+    float gx;
+    float gy;
+    float gz;
+} FloatSample;
+
+
 esp_err_t imu_read_burst(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr, size_t len, DataSample *sample);
 esp_err_t imu_read_reg(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr, uint8_t *data, size_t len);
 esp_err_t imu_write_reg(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr, uint8_t data);
 void i2c_master_init(i2c_master_bus_handle_t *bus_handle, i2c_master_dev_handle_t *dev_handle);
-void print_packet(DataSample *sample);
+void print_packet(FloatSample *sample);
+FloatSample convert_sample(DataSample *sample);
+void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf);
+
+#ifdef __cplusplus
+}
+#endif

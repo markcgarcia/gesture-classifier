@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/transmitter.elf
+file C:/Users/garci/Documents/Projects/26Su_Project/gesture-classifier/transmitter/build/receiver.elf
