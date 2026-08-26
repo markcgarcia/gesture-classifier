@@ -21,7 +21,7 @@ extern "C" void app_main(void) {
     i2c_master_init(&bus_handle, &dev_handle);
 
     // Create FreeRTOS queue to hold samples
-    incoming_queue = xQueueCreate(10, sizeof(DataSample));
+    incoming_queue = xQueueCreate(1024, sizeof(DataSample));
 
     // Initialize ESPNOW for this board
     wifi_espnow_startup();
@@ -50,10 +50,11 @@ extern "C" void app_main(void) {
             ftx = convert_sample(&tx_sample);
 
             // Print out values
-            printf("rx: %d, ", frx.num);
-            print_packet(&frx);
-            printf("tx: %d, ", ftx.num);
-            print_packet(&ftx);
+            // printf("rx: %d, ", frx.num);
+            // print_packet(&frx);
+            // printf("tx: %d, ", ftx.num);
+            // print_packet(&ftx);
+            print_combined(&frx, &ftx);
 
             rx_sample.num++;
          }

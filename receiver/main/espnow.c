@@ -43,7 +43,7 @@ void recv_cb(const esp_now_recv_info_t *recv_info,       // Receive struct (has 
     DataSample sample;
 
     // Push incoming data into the queue
-    memcpy(&sample, data, sizeof(sample));
+    memcpy(&sample, data, sizeof(DataSample));
     xQueueSendFromISR(incoming_queue, &sample, NULL);
 }
 
