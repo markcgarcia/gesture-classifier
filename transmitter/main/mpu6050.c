@@ -54,12 +54,14 @@ void i2c_master_init(i2c_master_bus_handle_t *bus_handle, i2c_master_dev_handle_
     ESP_ERROR_CHECK(i2c_master_bus_add_device(*bus_handle, &dev_cfg, dev_handle));
 }
 
-// Prints out our six axes of measurement in a given sample. Note that our timestamp,
-// temp, and MAC address are left off (for Edge Impulse ML-training purposes).
+// Prints out our six axes of measurement in a given sample.
 void print_packet(FloatSample *sample) {
     printf("%.7f,%.7f,%.7f,%.7f,%.7f,%.7f\n", 
             sample->ax, sample->ay, sample->az, sample->gx, sample->gy, sample->gz);
 }
+
+
+
 
 // Converts our sample data from raw integer to float. This is meant to be
 // done on the receiving board, which is why it isn't merged with the burst

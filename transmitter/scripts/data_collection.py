@@ -14,7 +14,7 @@ for port in ports:
     print(port)
 
 # Connect to respective port or throw error message
-ser = serial.Serial('COM6', 115200)
+ser = serial.Serial('COM6', 460800)
 
 # Initialize the CSV file
 header = "timestamp,acclX,acclY,acclZ,gyroX,gyroY,gyroZ"

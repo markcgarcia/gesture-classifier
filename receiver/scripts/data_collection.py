@@ -13,7 +13,7 @@ print("List of ports: =====================")
 for port in ports:
     print(port)
 
-# Connect to respective port or throw error message
+# Connect to respective port or thrrow error message
 ser = serial.Serial('COM6', 460800)
 
 # Initialize the CSV file
@@ -22,7 +22,7 @@ filepath = r"C:\Users\garci\Documents\Projects\26Su_Project\gesture-classifier\r
 i = 0
 
 # Make sure that this new capture is unique
-gesture = "leftjab"
+gesture = "rightchop"
 count = 1
 filename = f"{gesture}.{count}.csv"
 
