@@ -59,7 +59,7 @@ void led_countdown(led_strip_handle_t rgb) {
     printf("Collecting data in 1 second.\n");
 
     // 3
-    led_strip_set_pixel(rgb, 0, 255, 0, 0);
+    led_strip_set_pixel(rgb, 0, 100, 0, 0);
     led_strip_refresh(rgb);
     vTaskDelay(250 / portTICK_PERIOD_MS);
 
@@ -68,7 +68,7 @@ void led_countdown(led_strip_handle_t rgb) {
     vTaskDelay(250 / portTICK_PERIOD_MS);
 
     // 2
-    led_strip_set_pixel(rgb, 0, 255, 0, 0);
+    led_strip_set_pixel(rgb, 0, 100, 0, 0);
     led_strip_refresh(rgb);
     vTaskDelay(250 / portTICK_PERIOD_MS);
 
@@ -77,27 +77,33 @@ void led_countdown(led_strip_handle_t rgb) {
     vTaskDelay(250 / portTICK_PERIOD_MS);
 
     // Change to red forever until changed by the classifier.
-    led_strip_set_pixel(rgb, 0, 255, 0, 0);
+    led_strip_set_pixel(rgb, 0, 100, 0, 0);
     led_strip_refresh(rgb);
     vTaskDelay(5000 / portMAX_DELAY);
 }
 
 void led_choice(led_strip_handle_t rgb, int choice) {
     switch (choice) {
-        case 0: // chop, cyan
-            led_strip_set_pixel(rgb, 0, 0, 240, 255);
+        case 0:    // leftchop red
+            led_strip_set_pixel(rgb, 0, 255, 0, 0);
             break;
 
-        case 1: // circle, amber
-            led_strip_set_pixel(rgb, 0, 255, 183, 0);
+        case 1:    // leftjab orange
+            led_strip_set_pixel(rgb, 0, 255, 75, 0);
             break;
         
-        case 2: // jab, purple
-            led_strip_set_pixel(rgb, 0, 157, 0, 255);
+        case 2:    // leftwave yellow
+            led_strip_set_pixel(rgb, 0, 255, 255, 0);
             break;
 
-        case 3: // wave, green
-            led_strip_set_pixel(rgb, 0, 0, 255, 102);
+        case 3:    // rightchop green
+            led_strip_set_pixel(rgb, 0, 0, 255, 0);
+            break;
+        case 4:    // rightjab blue
+            led_strip_set_pixel(rgb, 0, 0, 0, 255);
+            break;
+        case 5:    // rightwave violet
+            led_strip_set_pixel(rgb, 0, 238, 130, 238);
             break;
 
         default:    // turn LED off

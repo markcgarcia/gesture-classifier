@@ -50,7 +50,7 @@ void i2c_master_init(i2c_master_bus_handle_t *bus_handle, i2c_master_dev_handle_
 void print_packet(FloatSample *sample);
 void print_combined(FloatSample *frx, FloatSample *ftx);
 FloatSample convert_sample(DataSample *sample);
-// void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf);
+void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf, QueueHandle_t incoming_queue);
 
 #ifdef __cplusplus
 }

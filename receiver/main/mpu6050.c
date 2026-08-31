@@ -82,31 +82,46 @@ FloatSample convert_sample(DataSample *sample) {
     return f;
 }
 
-// // Collects 200 10ms samples across six axes. This function takes in float *buf, which
-// // should point to the input buffer that we want to fill.
-// void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf) {
-//     DataSample sample;
-//     printf("Now collecting!\n");
-//     for (int i = 0; i < 200; i++) {
-        
-//         if (imu_read_burst(dev_handle, ACCEL_XOUT_REG_ADDR, 14, &sample) != ESP_OK) {
-//             printf("Error! Did not return ESP_OK!\n");
-//         }
-//         sample.num = 1;
-//         // Convert sample to float
-//         FloatSample fs = convert_sample(&sample);
+// Collects 200 10ms samples across six axes. This function takes in float *buf, which
+// should point to the input buffer that we want to fill.
+void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf, QueueHandle_t incoming_queue) {
+    
+    // Flush queue
+    vQueueDelete(incoming_queue);
+    incoming_queue = xQueueCreate(1024, sizeof(DataSample));
+    printf("Now collecting!\n");
+    
+    // Initialize struct for measurements 
+    DataSample rx_sample, tx_sample;
+    FloatSample frx, ftx;
+    rx_sample.num = 1;
+    int i = 0; 
+    while (i < 200) {
+         if (xQueueReceive(incoming_queue, &tx_sample, portMAX_DELAY)) {
+            // Read self (Rx) sensor
+            if (imu_read_burst(dev_handle, ACCEL_XOUT_REG_ADDR, 14, &rx_sample) != ESP_OK) {
+                printf("Error! Did not return ESP_OK!\n");
+            }
 
-//         // Put sample fields into buf array
-//         *(buf + 0 + 6*i) = fs.ax;
-//         *(buf + 1 + 6*i) = fs.ay;
-//         *(buf + 2 + 6*i) = fs.az;
-//         *(buf + 3 + 6*i) = fs.gx;
-//         *(buf + 4 + 6*i) = fs.gy;
-//         *(buf + 5 + 6*i) = fs.gz;
+            // Convert both samples to float values
+            frx = convert_sample(&rx_sample);
+            ftx = convert_sample(&tx_sample);
+            rx_sample.num++;
 
-//         sample.num += 1;
-
-//         // Repeat
-//         vTaskDelay(10 / portTICK_PERIOD_MS); 
-//     }
-// }
+            // Put sample fields into buf array
+            *(buf + 0  + 12*i) = frx.ax;
+            *(buf + 1  + 12*i) = frx.ay;
+            *(buf + 2  + 12*i) = frx.az;
+            *(buf + 3  + 12*i) = frx.gx;
+            *(buf + 4  + 12*i) = frx.gy;
+            *(buf + 5  + 12*i) = frx.gz;
+            *(buf + 6  + 12*i) = ftx.ax;
+            *(buf + 7  + 12*i) = ftx.ay;
+            *(buf + 8  + 12*i) = ftx.az;
+            *(buf + 9  + 12*i) = ftx.gx;
+            *(buf + 10 + 12*i) = ftx.gy;
+            *(buf + 11 + 12*i) = ftx.gz;
+            i++;
+         }
+    }
+}
