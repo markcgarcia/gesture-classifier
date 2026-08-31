@@ -82,31 +82,31 @@ FloatSample convert_sample(DataSample *sample) {
     return f;
 }
 
-// Collects 200 10ms samples across six axes. This function takes in float *buf, which
-// should point to the input buffer that we want to fill.
-void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf) {
-    DataSample sample;
-    printf("Now collecting!\n");
-    for (int i = 0; i < 200; i++) {
+// // Collects 200 10ms samples across six axes. This function takes in float *buf, which
+// // should point to the input buffer that we want to fill.
+// void fill_input_buffer(i2c_master_dev_handle_t dev_handle, float *buf) {
+//     DataSample sample;
+//     printf("Now collecting!\n");
+//     for (int i = 0; i < 200; i++) {
         
-        if (imu_read_burst(dev_handle, ACCEL_XOUT_REG_ADDR, 14, &sample) != ESP_OK) {
-            printf("Error! Did not return ESP_OK!\n");
-        }
-        sample.num = 1;
-        // Convert sample to float
-        FloatSample fs = convert_sample(&sample);
+//         if (imu_read_burst(dev_handle, ACCEL_XOUT_REG_ADDR, 14, &sample) != ESP_OK) {
+//             printf("Error! Did not return ESP_OK!\n");
+//         }
+//         sample.num = 1;
+//         // Convert sample to float
+//         FloatSample fs = convert_sample(&sample);
 
-        // Put sample fields into buf array
-        *(buf + 0 + 6*i) = fs.ax;
-        *(buf + 1 + 6*i) = fs.ay;
-        *(buf + 2 + 6*i) = fs.az;
-        *(buf + 3 + 6*i) = fs.gx;
-        *(buf + 4 + 6*i) = fs.gy;
-        *(buf + 5 + 6*i) = fs.gz;
+//         // Put sample fields into buf array
+//         *(buf + 0 + 6*i) = fs.ax;
+//         *(buf + 1 + 6*i) = fs.ay;
+//         *(buf + 2 + 6*i) = fs.az;
+//         *(buf + 3 + 6*i) = fs.gx;
+//         *(buf + 4 + 6*i) = fs.gy;
+//         *(buf + 5 + 6*i) = fs.gz;
 
-        sample.num += 1;
+//         sample.num += 1;
 
-        // Repeat
-        vTaskDelay(10 / portTICK_PERIOD_MS); 
-    }
-}
+//         // Repeat
+//         vTaskDelay(10 / portTICK_PERIOD_MS); 
+//     }
+// }

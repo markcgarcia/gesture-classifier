@@ -122,7 +122,7 @@ TfLiteStatus SelectPrepare(TfLiteContext* context, TfLiteNode* node) {
 
   bool same_shape = HaveSameShapes(input_condition, input_x) &&
                     HaveSameShapes(input_x, input_y);
-  TfLiteIntArray* output_size = nullptr;
+  TfLiteIntArray* output_size;
   if (!same_shape) {
     switch (kernel_type) {
       case kVersionOne: {
