@@ -1,17 +1,17 @@
 # gesture-classifier
-An ESP32-S3 powered hand gesture classifier, which takes samples from an MPU6050 sensor and feeds them into an Edge Impulse-trained ML model. 
+Two-node ESP32-S3 gesture classifier, which fuses transmitter and receiver MPU6050 IMU readings via ESPNOW. Edge Impulse model runs on-device ML inference with LED indicators.
 
 ## LED Color Codes
 
 | Color | Meaning | 
 | :--- | :---: | 
-| Red (blink) | The classifier is about to take a capture. | 
-| Red (solid) | The classifier is taking a data capture, or is making a prediction using the ML model. |
-| Cyan | Indicates "chop" gesture. | 
-| Yellow | Indicates "circle" gesture. | 
-| Purple | Indicates "jab" gesture. | 
-| Green | Indicates "wave" gesture.| 
-| Off | Error: classifier could not come to a conclusion. | 
+| Dim red (blink, then solid) | The classifier is about to take a capture. Data starts being collected during the LED's solid red glow. | 
+| Red  | Indicates left (Tx module) "chop" gesture. |
+| Orange | Indicates left (Tx module) "jab" gesture. | 
+| Yellow | Indicates left (Tx module) "wave" gesture. | 
+| Green | Indicates right (Rx module) "chop" gesture. | 
+| Blue | Indicates right (Rx module) "jab" gesture. | 
+| Violet | Indicates right (Rx module) "wave" gesture. | 
 
 ## Connection Table
 
@@ -29,11 +29,11 @@ An ESP32-S3 powered hand gesture classifier, which takes samples from an MPU6050
 ### v0.1.0
 Working version of one-node gesture classifier. Classifier outputs are printed out on the terminal after a one second sample is taken. Must restart the serial monitor in order to run the classifier again.
 
-### v0.1.1 (Finished, unmerged)
+### v0.1.1 
 One-node gesture classifier with extra improvements. Classifier is now triggered by a switch instead of having to restart the serial monitor. Additionally, the onboard LED now has the capability to display color codes according to classifier output.
 
-### v1.0.0 (Planned)
-Two-node gesture classifier, which is wirelessly connected by ESP-NOW protocol. Has different gestures compared to the original classifier, allowing for 12 axes of sensor data instead of the original 6.
+### v1.0.0 (Current)
+Two-node gesture classifier, which is wirelessly connected by ESP-NOW protocol. Has different gestures compared to the original classifier, allowing for 12 axes of sensor data instead of the original 6. Includes button control and LED indicator lights (features from last release).
 
 ### v1.1.0 (Planned)
 Added BLE GATT phone connectivity to display sensor outputs.
